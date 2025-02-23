@@ -1,7 +1,7 @@
 chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create({
         id: "contextMenuRealtimeTranslate",
-        title: "Run Translate",
+        title: "Run Translate (Ysu)",
         contexts: ["all"]
     });
 });
@@ -35,7 +35,8 @@ function runTranslate() {
     myDiv.style.position = "fixed";
     myDiv.style.top = "0";
     myDiv.style.right = "0";
-    myDiv.style.backgroundColor = "white";
+    myDiv.style.color = "#003000";
+    myDiv.style.backgroundColor = "rgba(255, 255, 255, 0.8)";
     myDiv.style.zIndex = "9999";
     myDiv.style.fontWeight = "bold";
     myDiv.style.padding = "10px";
