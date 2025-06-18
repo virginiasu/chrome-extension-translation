@@ -1,7 +1,7 @@
 chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create({
         id: "contextMenuRealtimeTranslate",
-        title: "Run Translate (Ysu)",
+        title: "Run Translate (YSu)",
         contexts: ["all"]
     });
 });
