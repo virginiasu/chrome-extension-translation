@@ -23,12 +23,16 @@ function runTranslate() {
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById("ysu_realtime_translate").innerText = data[0][0][0];
+                    const translatedText = data[1]?.map(item => {
+                        return `${item[0]}: ${item[1].join(", ")}`;
+                    }).join("\n") || data[0][0][0];
+                    document.getElementById("ysu_realtime_translate").innerText = translatedText;
                 });
         }
     }
 
-    document.addEventListener("selectionchange", handleSelection);
+    document.addEventListener("mouseup", handleSelection);
+    document.addEventListener("keyup", handleSelection);
 
     const myDiv = document.createElement("div");
     myDiv.id = "ysu_realtime_translate";
